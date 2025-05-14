@@ -132,7 +132,7 @@ ul li {
     font-weight: bold;
 }
 
-.pix-main-container { /* Novo container principal para o layout em colunas */
+.pix-main-container { 
     margin-top: 15px; 
     padding: 15px; 
     background-color: #E9ECEF; 
@@ -143,40 +143,39 @@ ul li {
     gap: 20px; 
 }
 
-.pix-option { /* Estilo base para cada card de opção PIX */
+.pix-option { 
     background-color: #FFFFFF; 
     border-radius: 5px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    padding: 15px; /* Aumentado um pouco o padding interno dos cards */
-    flex-grow: 1; /* Permite que cresçam */
+    padding: 15px; 
+    flex-grow: 1; 
 }
 
-.pix-qrcode { /* Card específico do QR Code */
-    flex-basis: 200px; /* Largura base para o QR Code, pode ajustar */
-    max-width: 220px; /* Largura máxima */
+.pix-qrcode { 
+    flex-basis: 200px; 
+    max-width: 220px; 
     text-align: center;
 }
 
-.pix-column-right { /* Nova coluna para Copia e Cola e CNPJ */
+.pix-column-right { 
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Espaço entre Copia e Cola e CNPJ */
+    gap: 15px; 
     flex-grow: 1;
 }
 
-.pix-copia-cola-card, .pix-cnpj-card { /* Estilo comum para os cards de texto */
-    /* Herda de .pix-option, aqui podemos adicionar estilos específicos se necessário */
-    min-width: 280px; /* Largura mínima para manter o layout do input+botão */
+.pix-copia-cola-card, .pix-celular-card { /* Aplicando o mesmo estilo para ambos os cards */
+    min-width: 280px; 
 }
 
 .pix-option p strong {
     color: #007BFF; 
     display: block;
-    margin-bottom: 10px; /* Aumentado um pouco */
+    margin-bottom: 10px; 
 }
 
 .pix-qrcode img {
-    max-width: 160px; /* Ajustado para caber melhor no card */
+    max-width: 160px; 
     height: auto;
     display: block;
     margin: 0 auto 10px auto; 
@@ -194,13 +193,13 @@ ul li {
 .pix-key-wrapper {
     display: flex;
     align-items: center;
-    gap: 8px; /* Aumentado um pouco para o botão não ficar colado */
+    gap: 8px; 
 }
 
-#pixKey, #pixKeyCnpj {
+#pixKey, #pixKeyCelular { /* Aplicando o mesmo estilo para ambos os inputs */
     flex-grow: 1;
-    padding: 10px; /* Aumentado para melhor toque */
-    font-size: 0.9em; /* Aumentado para melhor leitura */
+    padding: 10px; 
+    font-size: 0.9em; 
     border: 1px solid #CED4DA; 
     border-radius: 4px;
     background-color: #FFFFFF; 
@@ -209,25 +208,25 @@ ul li {
     white-space: nowrap;
 }
 
-#copyPixButton, #copyPixButtonCnpj {
-    padding: 10px 18px; /* Aumentado para melhor toque */
+#copyPixButton, #copyPixButtonCelular { /* Aplicando o mesmo estilo para ambos os botões */
+    padding: 10px 18px; 
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
-    font-size: 1em; /* Aumentado */
+    font-size: 1em; 
     background-color: #FF8C00; 
     color: #FFFFFF; 
     border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    white-space: nowrap; /* Evita quebra de linha no botão */
+    white-space: nowrap; 
 }
 
-#copyPixButton:hover, #copyPixButtonCnpj:hover {
+#copyPixButton:hover, #copyPixButtonCelular:hover {
     background-color: #E67E00; 
 }
 
-#copyPixButton:active, #copyPixButtonCnpj:active {
+#copyPixButton:active, #copyPixButtonCelular:active {
     background-color: #CC7000; 
 }
 
@@ -248,13 +247,13 @@ footer {
         align-items: stretch; 
     }
     .pix-qrcode {
-        max-width: 100%; /* Ocupa a largura total */
+        max-width: 100%; 
         margin-bottom: 15px;
     }
     .pix-column-right {
         gap: 15px;
     }
-    .pix-copia-cola-card, .pix-cnpj-card {
+    .pix-copia-cola-card, .pix-celular-card {
         min-width: 100%; 
     }
 
@@ -273,11 +272,11 @@ footer {
     .pix-key-wrapper {
         flex-direction: column;
     }
-    #pixKey, #pixKeyCnpj {
-        width: calc(100% - 20px); /* Ajustado para padding do input */
+    #pixKey, #pixKeyCelular {
+        width: calc(100% - 20px); 
         font-size: 0.85em;
     }
-    #copyPixButton, #copyPixButtonCnpj {
+    #copyPixButton, #copyPixButtonCelular {
         width: 100%;
         margin-top: 8px;
     }
@@ -305,7 +304,7 @@ footer {
     .pix-qrcode img {
         max-width: 150px; 
     }
-    #pixKey, #pixKeyCnpj {
+    #pixKey, #pixKeyCelular {
         font-size: 0.8em;
     }
 }

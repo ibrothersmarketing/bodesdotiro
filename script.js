@@ -68,6 +68,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Configura o botão para o PIX Copia e Cola
     setupCopyButton("copyPixButton", "pixKey", "Copiar Chave PIX");
 
-    // Configura o botão para o PIX CNPJ
-    setupCopyButton("copyPixButtonCnpj", "pixKeyCnpj", "Copiar CNPJ");
+    // Configura o botão para o PIX CELULAR
+    setupCopyButton("copyPixButtonCelular", "pixKeyCelular", "Copiar Celular");
 });
