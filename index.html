@@ -55,12 +55,31 @@
         <section id="inscricao">
             <h3>Inscrição</h3>
             <p class="valor-inscricao"><strong>Valor: <span>R$ 30,00</span></strong> por prova.</p>
-            <p>Realize o pagamento utilizando a chave PIX abaixo e envie o comprovante para o contato que será divulgado em breve.</p>
-            <div class="pix-container">
-                <p><strong>Chave PIX (Copia e Cola):</strong></p>
-                <div class="pix-key-wrapper">
-                    <input type="text" value="00020101021126880014br.gov.bcb.pix01364ea562b2-7ce6-49fa-829a-f696486b9ad00226Inscrição Campeonato Clube5204000053039865802BR5925CTTP CENTRO DE TREINAMENT6008BRASILIA62070503ICC63044324" id="pixKey" readonly>
-                    <button id="copyPixButton">Copiar Chave PIX</button>
+            <p>Realize o pagamento utilizando as opções PIX abaixo e envie o comprovante para o contato que será divulgado em breve.</p>
+            
+            <div class="pix-main-container">
+                <div class="pix-option pix-qrcode">
+                    <p><strong>PIX QR Code:</strong></p>
+                    <img src="qrcode_pix.jpeg" alt="QR Code PIX Inscrição">
+                    <p class="pix-scan-text">Escaneie para pagar</p>
+                </div>
+
+                <div class="pix-column-right">
+                    <div class="pix-option pix-copia-cola-card">
+                        <p><strong>PIX Copia e Cola:</strong></p>
+                        <div class="pix-key-wrapper">
+                            <input type="text" value="00020101021126880014br.gov.bcb.pix01364ea562b2-7ce6-49fa-829a-f696486b9ad00226Inscrição Campeonato Clube5204000053039865802BR5925CTTP CENTRO DE TREINAMENT6008BRASILIA62070503ICC63044324" id="pixKey" readonly>
+                            <button id="copyPixButton">Copiar Chave PIX</button>
+                        </div>
+                    </div>
+
+                    <div class="pix-option pix-cnpj-card">
+                        <p><strong>PIX CNPJ:</strong></p>
+                        <div class="pix-key-wrapper">
+                            <input type="text" value="34968721000101" id="pixKeyCnpj" readonly>
+                            <button id="copyPixButtonCnpj">Copiar CNPJ</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

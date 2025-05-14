@@ -5,33 +5,33 @@ body {
     padding: 0;
     background-color: #FFFFFF; 
     color: #343A40; 
-    line-height: 1.4; /* Reduzido para 1.4 */
+    line-height: 1.4; 
 }
 
 header {
     text-align: center;
-    padding: 18px 10px; /* Reduzido padding */
+    padding: 18px 10px; 
     background-color: #F8F9FA; 
     border-bottom: 1px solid #DEE2E6; 
 }
 
 #logo {
-    max-width: 230px; /* Levemente reduzido */
+    max-width: 230px; 
     height: auto;
 }
 
 main {
     max-width: 800px;
-    margin: 15px auto; /* Reduzido margin */
+    margin: 15px auto; 
     padding: 0 20px;
 }
 
 section {
-    margin-bottom: 30px; /* Reduzido */
-    padding: 20px; /* Reduzido */
+    margin-bottom: 30px; 
+    padding: 20px; 
     background-color: #FFFFFF; 
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.04); /* Sombra mais sutil */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04); 
 }
 
 section#welcome {
@@ -39,7 +39,7 @@ section#welcome {
     box-shadow: none;
     padding-top: 0;
     padding-bottom: 0;
-    margin-bottom: 10px; /* Reduzido */
+    margin-bottom: 10px; 
 }
 
 h1, h2, h3, h4 {
@@ -48,41 +48,41 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-    font-size: 2.7em; /* Levemente reduzido */
+    font-size: 2.7em; 
     text-align: center;
     color: #007BFF; 
-    margin-bottom: 5px; /* Reduzido */
+    margin-bottom: 5px; 
 }
 
 h2 {
-    font-size: 1.7em; /* Levemente reduzido */
+    font-size: 1.7em; 
     text-align: center;
     color: #FF8C00; 
-    margin-bottom: 20px; /* Reduzido */
+    margin-bottom: 20px; 
     font-weight: 400; 
 }
 
 h3 {
-    font-size: 1.9em; /* Levemente reduzido */
+    font-size: 1.9em; 
     color: #007BFF; 
     border-bottom: 2px solid #007BFF; 
-    padding-bottom: 6px; /* Reduzido */
-    margin-bottom: 18px; /* Reduzido */
+    padding-bottom: 6px; 
+    margin-bottom: 18px; 
 }
 
 h4 {
-    font-size: 1.3em; /* Levemente reduzido */
+    font-size: 1.3em; 
     color: #343A40; 
-    margin-bottom: 6px; /* Reduzido */
+    margin-bottom: 6px; 
 }
 
 .info-item h4 {
     color: #007BFF; 
-    font-size: 1.2em; /* Mantido */
+    font-size: 1.2em; 
 }
 
 p {
-    margin-bottom: 10px; /* Reduzido para 10px */
+    margin-bottom: 10px; 
     color: #343A40; 
 }
 
@@ -93,38 +93,38 @@ ul {
 
 ul li {
     background-color: #F8F9FA; 
-    padding: 8px 12px; /* Reduzido padding */
-    margin-bottom: 5px; /* Reduzido para 5px */
+    padding: 8px 12px; 
+    margin-bottom: 5px; 
     border-radius: 4px;
-    border-left: 4px solid #FF8C00; /* Borda levemente mais fina */
+    border-left: 4px solid #FF8C00; 
     color: #343A40;
 }
 
 .info-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Ajustado minmax */
-    gap: 12px; /* Reduzido */
-    margin-bottom: 18px; /* Reduzido */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+    gap: 12px; 
+    margin-bottom: 18px; 
 }
 
 .info-item {
     background-color: #F8F9FA; 
-    padding: 15px; /* Reduzido */
+    padding: 15px; 
     border-radius: 5px;
     border: 1px solid #E9ECEF;
 }
 
 .info-item p {
     margin-bottom: 0;
-    font-size: 0.95em; /* Levemente reduzido */
+    font-size: 0.95em; 
     color: #343A40;
 }
 
 /* Inscrição Section */
 #inscricao .valor-inscricao {
-    font-size: 1.15em; /* Levemente reduzido */
+    font-size: 1.15em; 
     color: #343A40;
-    margin-bottom: 15px; /* Reduzido */
+    margin-bottom: 15px; 
 }
 
 #inscricao .valor-inscricao strong span {
@@ -132,29 +132,75 @@ ul li {
     font-weight: bold;
 }
 
-.pix-container {
-    margin-top: 15px; /* Reduzido */
-    padding: 15px; /* Reduzido */
+.pix-main-container { /* Novo container principal para o layout em colunas */
+    margin-top: 15px; 
+    padding: 15px; 
     background-color: #E9ECEF; 
-    border-radius: 5px;
+    border-radius: 8px; 
     border: 1px solid #DEE2E6;
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 20px; 
 }
 
-.pix-container p strong {
+.pix-option { /* Estilo base para cada card de opção PIX */
+    background-color: #FFFFFF; 
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    padding: 15px; /* Aumentado um pouco o padding interno dos cards */
+    flex-grow: 1; /* Permite que cresçam */
+}
+
+.pix-qrcode { /* Card específico do QR Code */
+    flex-basis: 200px; /* Largura base para o QR Code, pode ajustar */
+    max-width: 220px; /* Largura máxima */
+    text-align: center;
+}
+
+.pix-column-right { /* Nova coluna para Copia e Cola e CNPJ */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaço entre Copia e Cola e CNPJ */
+    flex-grow: 1;
+}
+
+.pix-copia-cola-card, .pix-cnpj-card { /* Estilo comum para os cards de texto */
+    /* Herda de .pix-option, aqui podemos adicionar estilos específicos se necessário */
+    min-width: 280px; /* Largura mínima para manter o layout do input+botão */
+}
+
+.pix-option p strong {
     color: #007BFF; 
+    display: block;
+    margin-bottom: 10px; /* Aumentado um pouco */
+}
+
+.pix-qrcode img {
+    max-width: 160px; /* Ajustado para caber melhor no card */
+    height: auto;
+    display: block;
+    margin: 0 auto 10px auto; 
+    border: 1px solid #DEE2E6;
+    padding: 5px; 
+    background-color: #FFFFFF;
+}
+
+.pix-scan-text {
+    text-align: center;
+    font-size: 0.9em;
+    color: #6C757D;
 }
 
 .pix-key-wrapper {
     display: flex;
     align-items: center;
-    gap: 6px; /* Reduzido */
-    margin-top: 6px; /* Reduzido */
+    gap: 8px; /* Aumentado um pouco para o botão não ficar colado */
 }
 
-#pixKey {
+#pixKey, #pixKeyCnpj {
     flex-grow: 1;
-    padding: 9px; /* Reduzido */
-    font-size: 0.85em; /* Levemente reduzido */
+    padding: 10px; /* Aumentado para melhor toque */
+    font-size: 0.9em; /* Aumentado para melhor leitura */
     border: 1px solid #CED4DA; 
     border-radius: 4px;
     background-color: #FFFFFF; 
@@ -163,39 +209,55 @@ ul li {
     white-space: nowrap;
 }
 
-#copyPixButton {
-    padding: 9px 16px; /* Reduzido */
+#copyPixButton, #copyPixButtonCnpj {
+    padding: 10px 18px; /* Aumentado para melhor toque */
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
-    font-size: 0.95em; /* Levemente reduzido */
+    font-size: 1em; /* Aumentado */
     background-color: #FF8C00; 
     color: #FFFFFF; 
     border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    white-space: nowrap; /* Evita quebra de linha no botão */
 }
 
-#copyPixButton:hover {
+#copyPixButton:hover, #copyPixButtonCnpj:hover {
     background-color: #E67E00; 
 }
 
-#copyPixButton:active {
+#copyPixButton:active, #copyPixButtonCnpj:active {
     background-color: #CC7000; 
 }
 
 footer {
     text-align: center;
-    padding: 15px; /* Reduzido */
-    margin-top: 30px; /* Reduzido */
+    padding: 15px; 
+    margin-top: 30px; 
     background-color: #F8F9FA; 
     border-top: 1px solid #DEE2E6; 
-    font-size: 0.85em; /* Levemente reduzido */
+    font-size: 0.85em; 
     color: #6C757D; 
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 768px) { 
+    .pix-main-container {
+        flex-direction: column; 
+        align-items: stretch; 
+    }
+    .pix-qrcode {
+        max-width: 100%; /* Ocupa a largura total */
+        margin-bottom: 15px;
+    }
+    .pix-column-right {
+        gap: 15px;
+    }
+    .pix-copia-cola-card, .pix-cnpj-card {
+        min-width: 100%; 
+    }
+
     h1 {
         font-size: 2.1em;
     }
@@ -211,14 +273,13 @@ footer {
     .pix-key-wrapper {
         flex-direction: column;
     }
-    #pixKey {
-        width: calc(100% - 18px); 
-        font-size: 0.75em;
+    #pixKey, #pixKeyCnpj {
+        width: calc(100% - 20px); /* Ajustado para padding do input */
+        font-size: 0.85em;
     }
-    #copyPixButton {
+    #copyPixButton, #copyPixButtonCnpj {
         width: 100%;
-        margin-top: 6px;
-        padding: 10px 16px;
+        margin-top: 8px;
     }
 }
 
@@ -240,6 +301,12 @@ footer {
     }
     .info-grid {
         grid-template-columns: 1fr; 
+    }
+    .pix-qrcode img {
+        max-width: 150px; 
+    }
+    #pixKey, #pixKeyCnpj {
+        font-size: 0.8em;
     }
 }
 

@@ -1,40 +1,41 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const copyPixButton = document.getElementById('copyPixButton');
-    const pixKeyInput = document.getElementById('pixKey');
+document.addEventListener("DOMContentLoaded", function() {
+    // Função genérica para copiar texto para a área de transferência
+    function setupCopyButton(buttonId, inputId, originalButtonText) {
+        const copyButton = document.getElementById(buttonId);
+        const textInput = document.getElementById(inputId);
 
-    if (copyPixButton && pixKeyInput) {
-        copyPixButton.addEventListener('click', function() {
-            pixKeyInput.select(); // Seleciona o texto no campo de input
-            pixKeyInput.setSelectionRange(0, 99999); // Para dispositivos móveis
+        if (copyButton && textInput) {
+            copyButton.addEventListener("click", function() {
+                textInput.select(); // Seleciona o texto no campo de input
+                textInput.setSelectionRange(0, 99999); // Para dispositivos móveis
 
-            try {
-                // Tenta usar a API de Clipboard moderna
-                navigator.clipboard.writeText(pixKeyInput.value)
-                    .then(() => {
-                        // Sucesso!
-                        copyPixButton.textContent = 'Copiado!';
-                        setTimeout(() => {
-                            copyPixButton.textContent = 'Copiar Chave PIX';
-                        }, 2000); // Volta ao texto original após 2 segundos
-                    })
-                    .catch(err => {
-                        // Fallback para o método execCommand (mais antigo, menos seguro)
-                        console.warn('Falha ao copiar com a API de Clipboard, tentando execCommand:', err);
-                        fallbackCopyTextToClipboard(pixKeyInput.value);
-                    });
-            } catch (err) {
-                // Fallback se navigator.clipboard não estiver disponível
-                console.warn('API de Clipboard não disponível, tentando execCommand:', err);
-                fallbackCopyTextToClipboard(pixKeyInput.value);
-            }
-        });
+                try {
+                    // Tenta usar a API de Clipboard moderna
+                    navigator.clipboard.writeText(textInput.value)
+                        .then(() => {
+                            // Sucesso!
+                            copyButton.textContent = "Copiado!";
+                            setTimeout(() => {
+                                copyButton.textContent = originalButtonText;
+                            }, 2000); // Volta ao texto original após 2 segundos
+                        })
+                        .catch(err => {
+                            console.warn("Falha ao copiar com a API de Clipboard, tentando execCommand:", err);
+                            fallbackCopyTextToClipboard(textInput.value, copyButton, originalButtonText);
+                        });
+                } catch (err) {
+                    console.warn("API de Clipboard não disponível, tentando execCommand:", err);
+                    fallbackCopyTextToClipboard(textInput.value, copyButton, originalButtonText);
+                }
+            });
+        }
     }
 
-    function fallbackCopyTextToClipboard(text) {
+    // Função de fallback para copiar texto
+    function fallbackCopyTextToClipboard(text, buttonElement, originalButtonText) {
         const textArea = document.createElement("textarea");
         textArea.value = text;
         
-        // Evita rolar a página para baixo ao adicionar o textarea
         textArea.style.top = "0";
         textArea.style.left = "0";
         textArea.style.position = "fixed";
@@ -44,23 +45,29 @@ document.addEventListener('DOMContentLoaded', function() {
         textArea.select();
 
         try {
-            const successful = document.execCommand('copy');
+            const successful = document.execCommand("copy");
             if (successful) {
-                copyPixButton.textContent = 'Copiado!';
+                buttonElement.textContent = "Copiado!";
                 setTimeout(() => {
-                    copyPixButton.textContent = 'Copiar Chave PIX';
+                    buttonElement.textContent = originalButtonText;
                 }, 2000);
             } else {
-                copyPixButton.textContent = 'Erro ao Copiar';
-                 console.error('Fallback: Falha ao copiar o texto.');
-                 alert('Não foi possível copiar a chave PIX. Por favor, copie manualmente.');
+                buttonElement.textContent = "Erro ao Copiar";
+                console.error("Fallback: Falha ao copiar o texto.");
+                alert("Não foi possível copiar. Por favor, copie manualmente.");
             }
         } catch (err) {
-            console.error('Fallback: Erro ao tentar copiar o texto:', err);
-            copyPixButton.textContent = 'Erro ao Copiar';
-            alert('Não foi possível copiar a chave PIX. Por favor, copie manualmente.');
+            console.error("Fallback: Erro ao tentar copiar o texto:", err);
+            buttonElement.textContent = "Erro ao Copiar";
+            alert("Não foi possível copiar. Por favor, copie manualmente.");
         }
 
         document.body.removeChild(textArea);
     }
+
+    // Configura o botão para o PIX Copia e Cola
+    setupCopyButton("copyPixButton", "pixKey", "Copiar Chave PIX");
+
+    // Configura o botão para o PIX CNPJ
+    setupCopyButton("copyPixButtonCnpj", "pixKeyCnpj", "Copiar CNPJ");
 });
