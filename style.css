@@ -1,0 +1,227 @@
+/* General Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1E1E1E; /* Fundo Principal: Preto */
+    color: #E0E0E0; /* Cor do Texto Principal: Cinza muito claro */
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 20px 10px;
+    background-color: #2C2C2C; /* Cinza escuro para destacar o logo */
+}
+
+#logo {
+    max-width: 250px;
+    height: auto;
+    /* Tentativa de remover fundo branco se a imagem for PNG com transparência.
+       Se a imagem for JPG ou tiver fundo sólido, isso não terá efeito.
+       O ideal é uma imagem com fundo transparente. */
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #2C2C2C; /* Cinza escuro para seções */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Oswald', 'Roboto Condensed', 'Montserrat', sans-serif; /* Fontes de Título */
+    color: #FF8C00; /* Cor de Destaque Principal: Laranja vibrante */
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 2.8em;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.8em;
+    text-align: center;
+    color: #FFC107; /* Cor de Destaque Secundária: Amarelo/Dourado */
+    margin-bottom: 30px;
+}
+
+h3 {
+    font-size: 2em;
+    border-bottom: 2px solid #FF8C00;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+h4 {
+    font-size: 1.4em;
+    color: #FFC107; /* Amarelo/Dourado para subtítulos de seção */
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    background-color: #424242; /* Cor de Apoio para itens de lista */
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    border-left: 5px solid #FF8C00;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.info-item {
+    background-color: #424242;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.info-item h4 {
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
+
+.info-item p {
+    margin-bottom: 0;
+    font-size: 1em;
+}
+
+/* Inscrição Section */
+#inscricao .valor-inscricao {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #FFC107;
+    margin-bottom: 20px;
+}
+
+.pix-container {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #1E1E1E; /* Fundo mais escuro para destacar a chave */
+    border-radius: 5px;
+    border: 1px solid #424242;
+}
+
+.pix-container p strong {
+    color: #FFC107;
+}
+
+.pix-key-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#pixKey {
+    flex-grow: 1;
+    padding: 12px;
+    font-size: 0.9em; /* Reduzido para caber melhor */
+    border: 1px solid #BDBDBD; /* Cinza claro para borda */
+    border-radius: 4px;
+    background-color: #E0E0E0; /* Fundo claro para o input */
+    color: #1E1E1E; /* Texto escuro para contraste no input */
+    overflow-x: auto; /* Permite rolagem se o texto for muito longo */
+    white-space: nowrap;
+}
+
+#copyPixButton {
+    padding: 12px 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    background-color: #FF8C00; /* Laranja vibrante */
+    color: #1E1E1E; /* Texto escuro para contraste no botão */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#copyPixButton:hover {
+    background-color: #FFC107; /* Amarelo/Dourado no hover */
+}
+
+#copyPixButton:active {
+    background-color: #e07b00;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background-color: #2C2C2C;
+    font-size: 0.9em;
+    color: #BDBDBD; /* Cinza claro para texto do rodapé */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    h3 {
+        font-size: 1.8em;
+    }
+    #logo {
+        max-width: 200px;
+    }
+    .pix-key-wrapper {
+        flex-direction: column;
+    }
+    #pixKey {
+        width: calc(100% - 24px); /* Ajustar largura considerando padding */
+        font-size: 0.8em;
+    }
+    #copyPixButton {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+    h2 {
+        font-size: 1.3em;
+    }
+    h3 {
+        font-size: 1.5em;
+    }
+    section {
+        padding: 15px;
+    }
+    #logo {
+        max-width: 150px;
+    }
+    .info-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    }
+}
+
