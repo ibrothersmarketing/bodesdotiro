@@ -230,6 +230,13 @@ ul li {
     background-color: #CC7000; 
 }
 
+.aviso-pagamento {
+    margin-top: 20px; /* Espaço acima do aviso */
+    text-align: center;
+    color: #DC3545; /* Cor vermelha para atenção */
+    font-size: 1.1em;
+}
+
 footer {
     text-align: center;
     padding: 15px; 
@@ -280,6 +287,9 @@ footer {
         width: 100%;
         margin-top: 8px;
     }
+    .aviso-pagamento {
+        font-size: 1em;
+    }
 }
 
 @media (max-width: 480px) {
@@ -306,6 +316,9 @@ footer {
     }
     #pixKey, #pixKeyCelular {
         font-size: 0.8em;
+    }
+    .aviso-pagamento {
+        font-size: 0.9em;
     }
 }
 
