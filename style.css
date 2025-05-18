@@ -132,6 +132,133 @@ ul li {
     font-weight: bold;
 }
 
+/* Tabela de Seleção de Provas */
+.provas-container {
+    background-color: #F8F9FA;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #DEE2E6;
+}
+
+.provas-container h4 {
+    color: #007BFF;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.provas-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.prova-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    border: 1px solid #DEE2E6;
+    transition: background-color 0.2s ease;
+}
+
+.prova-item:hover {
+    background-color: #F1F3F5;
+}
+
+.prova-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+.prova-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #FFFFFF;
+    border: 2px solid #CED4DA;
+    border-radius: 4px;
+}
+
+.prova-checkbox:hover input ~ .checkmark {
+    background-color: #F1F3F5;
+}
+
+.prova-checkbox input:checked ~ .checkmark {
+    background-color: #FF8C00;
+    border-color: #FF8C00;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.prova-checkbox input:checked ~ .checkmark:after {
+    display: block;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.prova-nome {
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+.prova-valor {
+    font-weight: bold;
+    color: #FF8C00;
+}
+
+.valor-total {
+    margin-top: 15px;
+    padding: 12px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    border: 1px solid #DEE2E6;
+    text-align: right;
+}
+
+.valor-total p {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.valor-total strong {
+    color: #FF8C00;
+    font-size: 1.3em;
+}
+
+.aviso-tentativas {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #E9ECEF;
+    border-radius: 5px;
+    font-size: 0.95em;
+    border-left: 4px solid #007BFF;
+}
+
 .pix-main-container { 
     margin-top: 15px; 
     padding: 15px; 
@@ -290,6 +417,16 @@ footer {
     .aviso-pagamento {
         font-size: 1em;
     }
+    
+    .prova-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .prova-valor {
+        align-self: flex-end;
+    }
 }
 
 @media (max-width: 480px) {
@@ -320,5 +457,12 @@ footer {
     .aviso-pagamento {
         font-size: 0.9em;
     }
+    
+    .valor-total p {
+        font-size: 1.1em;
+    }
+    
+    .valor-total strong {
+        font-size: 1.2em;
+    }
 }
-

@@ -55,6 +55,44 @@
         <section id="inscricao">
             <h3>Inscrição</h3>
             <p class="valor-inscricao"><strong>Valor: <span>R$ 30,00</span></strong> por prova.</p>
+            
+            <!-- Tabela interativa de seleção de provas -->
+            <div class="provas-container">
+                <h4>Selecione as provas que deseja participar:</h4>
+                <div class="provas-selection">
+                    <div class="prova-item">
+                        <label class="prova-checkbox">
+                            <input type="checkbox" name="prova" value="pistola5m" data-valor="30.00">
+                            <span class="checkmark"></span>
+                            <span class="prova-nome">Pistola/Revólver - 5 metros (Calibre Mínimo: .380 e 38)</span>
+                        </label>
+                        <span class="prova-valor">R$ 30,00</span>
+                    </div>
+                    <div class="prova-item">
+                        <label class="prova-checkbox">
+                            <input type="checkbox" name="prova" value="pistola10m" data-valor="30.00">
+                            <span class="checkmark"></span>
+                            <span class="prova-nome">Pistola/Revólver - 10 metros (Calibre Mínimo: .380 e 38)</span>
+                        </label>
+                        <span class="prova-valor">R$ 30,00</span>
+                    </div>
+                    <div class="prova-item">
+                        <label class="prova-checkbox">
+                            <input type="checkbox" name="prova" value="carabina25m" data-valor="30.00">
+                            <span class="checkmark"></span>
+                            <span class="prova-nome">Carabina/Rifle - 25 metros (Calibre Mínimo: 22)</span>
+                        </label>
+                        <span class="prova-valor">R$ 30,00</span>
+                    </div>
+                </div>
+                <div class="valor-total">
+                    <p>Valor Total: <strong id="valorTotalDisplay">R$ 0,00</strong></p>
+                </div>
+                <p class="aviso-tentativas">
+                    <strong>Importante:</strong> No dia do evento, será permitido realizar mais 3 tentativas/passadas para cada prova executada, ao custo de R$ 30,00 por tentativa/passada adicional.
+                </p>
+            </div>
+            
             <p>Realize o pagamento utilizando as opções PIX abaixo e envie o comprovante para o contato (44)99100-2961.</p>
             
             <div class="pix-main-container">

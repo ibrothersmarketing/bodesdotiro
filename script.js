@@ -70,4 +70,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Configura o botão para o PIX CELULAR
     setupCopyButton("copyPixButtonCelular", "pixKeyCelular", "Copiar Celular");
+    
+    // Função para calcular o valor total das provas selecionadas
+    function calcularValorTotal() {
+        const checkboxes = document.querySelectorAll('input[name="prova"]:checked');
+        let valorTotal = 0;
+        
+        checkboxes.forEach(checkbox => {
+            valorTotal += parseFloat(checkbox.getAttribute('data-valor'));
+        });
+        
+        // Atualiza o display do valor total
+        document.getElementById('valorTotalDisplay').textContent = `R$ ${valorTotal.toFixed(2).replace('.', ',')}`;
+    }
+    
+    // Adiciona evento de change para todos os checkboxes de provas
+    const checkboxesProvas = document.querySelectorAll('input[name="prova"]');
+    checkboxesProvas.forEach(checkbox => {
+        checkbox.addEventListener('change', calcularValorTotal);
+    });
+    
+    // Inicializa o cálculo do valor total
+    calcularValorTotal();
 });
