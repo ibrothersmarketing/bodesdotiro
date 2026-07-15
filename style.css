@@ -168,67 +168,46 @@ ul li {
     background-color: #F1F3F5;
 }
 
-.prova-checkbox {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    user-select: none;
-    position: relative;
-    padding-left: 30px;
-}
-
-.prova-checkbox input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-}
-
-.checkmark {
-    position: absolute;
-    left: 0;
-    height: 20px;
-    width: 20px;
-    background-color: #FFFFFF;
-    border: 2px solid #CED4DA;
-    border-radius: 4px;
-}
-
-.prova-checkbox:hover input ~ .checkmark {
-    background-color: #F1F3F5;
-}
-
-.prova-checkbox input:checked ~ .checkmark {
-    background-color: #FF8C00;
-    border-color: #FF8C00;
-}
-
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-.prova-checkbox input:checked ~ .checkmark:after {
-    display: block;
-    left: 6px;
-    top: 2px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
-}
-
 .prova-nome {
     font-weight: 600;
-    margin-left: 5px;
 }
 
-.prova-valor {
+.prova-quantidade {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.qtd-btn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+    background-color: #FF8C00;
+    color: #FFFFFF;
+    font-size: 1.1em;
     font-weight: bold;
-    color: #FF8C00;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.qtd-btn:hover {
+    background-color: #E67E00;
+}
+
+.qtd-btn:active {
+    background-color: #CC7000;
+}
+
+.qtd-input {
+    width: 36px;
+    height: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: #343A40;
+    border: 1px solid #CED4DA;
+    border-radius: 4px;
+    background-color: #FFFFFF;
 }
 
 .valor-total {
@@ -423,8 +402,8 @@ footer {
         align-items: flex-start;
         gap: 10px;
     }
-    
-    .prova-valor {
+
+    .prova-quantidade {
         align-self: flex-end;
     }
 }

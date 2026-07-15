@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2ª Etapa da Copa Bodes do Tiro</title>
+    <title>III Etapa do Campeonato Bodes do Tiro</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
 
     <main>
         <section id="welcome">
-            <h1>2ª Etapa da Copa Bodes do Tiro</h1>
+            <h1>III Etapa do Campeonato Bodes do Tiro</h1>
             <h2>Reserva de Inscrição (Vagas Limitadas)</h2>
         </section>
 
@@ -24,84 +24,110 @@
             <h3>Informações do Evento</h3>
             <div class="info-grid">
                 <div class="info-item">
-                    <h4>Data</h4>
-                    <p>27 de setembro de 2025 (Sábado)</p>
-                </div>
-                <div class="info-item">
-                    <h4>Horário</h4>
-                    <p>A partir das 17h</p>
+                    <h4>Datas</h4>
+                    <p>16, 17 e 18 de julho de 2026 (Quinta a Sábado)</p>
                 </div>
                 <div class="info-item">
                     <h4>Local</h4>
-                    <p>Clube de Tiro de Paiçandu</p>
+                    <p>Clube de Tiro Paiçandu</p>
                 </div>
                 <div class="info-item">
                     <h4>Público</h4>
-                    <p>Exclusivo para maçons com Certificado de Registro (CR no Exército) ativo.</p>
+                    <p>Atiradores esportivos e CACs (Colecionadores, Atiradores e Caçadores).</p>
+                </div>
+                <div class="info-item">
+                    <h4>Organização</h4>
+                    <p>Bodes do Tiro Maringá, em parceria com o Clube de Tiro Paiçandu.</p>
                 </div>
             </div>
-            
-            <h4>Provas:</h4>
+
+            <h4>Cronograma:</h4>
             <ul>
-                <li>Pistola  - 7 metros (Calibre mínimo: .380 e 38)</li>
-                <li>Revólver - 7 metros (Calibre mínimo: 38)</li>
-                <li>Carabina - 20 metros (Calibre mínimo: 38)</li>
-                <li>Rifle - 20 metros (Calibre: 22)</li>
+                <li>16/07 (Quinta-feira): Provas das 18h às 21h</li>
+                <li>17/07 (Sexta-feira): Provas das 18h às 21h</li>
+                <li>18/07 (Sábado): Provas das 9h às 17h</li>
+                <li>A partir das 17h do dia 18/07: Encerramento das pistas, cerimônia de premiação e confraternização</li>
             </ul>
-            
+
+            <h4>Modalidades:</h4>
+            <ul>
+                <li>Pistola - 7 metros</li>
+                <li>Revólver - 7 metros</li>
+                <li>Carabina .22 - 20 metros</li>
+                <li>Carabina .38 e acima - 20 metros</li>
+                <li>Desafio do Turco - 7 metros (5 disparos em 1 minuto)</li>
+                <li>Desafio do Bode - Acerto de obréia</li>
+            </ul>
+
             <h4>Premiação:</h4>
-            <p>Medalhas do 1º ao 5º colocado em cada categoria.</p>
+            <p>Medalhas e troféus do 1º ao 5º colocado em cada modalidade.</p>
         </section>
 
         <section id="inscricao">
             <h3>Inscrição</h3>
-            <p class="valor-inscricao"><strong>Valor: <span>R$ 30,00</span></strong> por prova.</p>
-            
+            <p class="valor-inscricao"><strong>Valor: <span>R$ 30,00</span></strong> por passada.</p>
+
             <!-- Tabela interativa de seleção de provas -->
             <div class="provas-container">
-                <h4>Selecione as provas que deseja participar:</h4>
+                <h4>Selecione a quantidade de passadas por modalidade (máximo 3 cada):</h4>
                 <div class="provas-selection">
                     <div class="prova-item">
-                        <label class="prova-checkbox">
-                            <input type="checkbox" name="prova" value="pistola7m380" data-valor="30.00">
-                            <span class="checkmark"></span>
-                            <span class="prova-nome">Pistola - 7 metros (Calibre mínimo: .380 e 38)</span>
-                        </label>
-                        <span class="prova-valor">R$ 30,00</span>
+                        <span class="prova-nome">Pistola - 7 metros</span>
+                        <div class="prova-quantidade">
+                            <button type="button" class="qtd-btn qtd-menos" data-target="pistola7m" aria-label="Diminuir">−</button>
+                            <input type="number" class="qtd-input" id="qtd-pistola7m" data-prova="pistola7m" data-valor="30.00" value="0" min="0" max="3" readonly>
+                            <button type="button" class="qtd-btn qtd-mais" data-target="pistola7m" aria-label="Aumentar">+</button>
+                        </div>
                     </div>
                     <div class="prova-item">
-                        <label class="prova-checkbox">
-                            <input type="checkbox" name="prova" value="revolver7m380" data-valor="30.00">
-                            <span class="checkmark"></span>
-                            <span class="prova-nome">Revólver - 7 metros (Calibre mínimo: 38)</span>
-                        </label>
-                        <span class="prova-valor">R$ 30,00</span>
+                        <span class="prova-nome">Revólver - 7 metros</span>
+                        <div class="prova-quantidade">
+                            <button type="button" class="qtd-btn qtd-menos" data-target="revolver7m" aria-label="Diminuir">−</button>
+                            <input type="number" class="qtd-input" id="qtd-revolver7m" data-prova="revolver7m" data-valor="30.00" value="0" min="0" max="3" readonly>
+                            <button type="button" class="qtd-btn qtd-mais" data-target="revolver7m" aria-label="Aumentar">+</button>
+                        </div>
                     </div>
                     <div class="prova-item">
-                        <label class="prova-checkbox">
-                            <input type="checkbox" name="prova" value="carabina20m" data-valor="30.00">
-                            <span class="checkmark"></span>
-                            <span class="prova-nome">Carabina - 20 metros (Calibre mínimo: 38)</span>
-                        </label>
-                        <span class="prova-valor">R$ 30,00</span>
+                        <span class="prova-nome">Carabina .22 - 20 metros</span>
+                        <div class="prova-quantidade">
+                            <button type="button" class="qtd-btn qtd-menos" data-target="carabina22" aria-label="Diminuir">−</button>
+                            <input type="number" class="qtd-input" id="qtd-carabina22" data-prova="carabina22" data-valor="30.00" value="0" min="0" max="3" readonly>
+                            <button type="button" class="qtd-btn qtd-mais" data-target="carabina22" aria-label="Aumentar">+</button>
+                        </div>
                     </div>
                     <div class="prova-item">
-                        <label class="prova-checkbox">
-                            <input type="checkbox" name="prova" value="rifle20m" data-valor="30.00">
-                            <span class="checkmark"></span>
-                            <span class="prova-nome">Rifle - 20 metros (Calibre: 22)</span>
-                        </label>
-                        <span class="prova-valor">R$ 30,00</span>
+                        <span class="prova-nome">Carabina .38 e acima - 20 metros</span>
+                        <div class="prova-quantidade">
+                            <button type="button" class="qtd-btn qtd-menos" data-target="carabina38" aria-label="Diminuir">−</button>
+                            <input type="number" class="qtd-input" id="qtd-carabina38" data-prova="carabina38" data-valor="30.00" value="0" min="0" max="3" readonly>
+                            <button type="button" class="qtd-btn qtd-mais" data-target="carabina38" aria-label="Aumentar">+</button>
+                        </div>
+                    </div>
+                    <div class="prova-item">
+                        <span class="prova-nome">Desafio do Turco - 7 metros (5 disparos em 1 minuto)</span>
+                        <div class="prova-quantidade">
+                            <button type="button" class="qtd-btn qtd-menos" data-target="desafioTurco" aria-label="Diminuir">−</button>
+                            <input type="number" class="qtd-input" id="qtd-desafioTurco" data-prova="desafioTurco" data-valor="30.00" value="0" min="0" max="3" readonly>
+                            <button type="button" class="qtd-btn qtd-mais" data-target="desafioTurco" aria-label="Aumentar">+</button>
+                        </div>
+                    </div>
+                    <div class="prova-item">
+                        <span class="prova-nome">Desafio do Bode - Acerto de obréia</span>
+                        <div class="prova-quantidade">
+                            <button type="button" class="qtd-btn qtd-menos" data-target="desafioBode" aria-label="Diminuir">−</button>
+                            <input type="number" class="qtd-input" id="qtd-desafioBode" data-prova="desafioBode" data-valor="30.00" value="0" min="0" max="3" readonly>
+                            <button type="button" class="qtd-btn qtd-mais" data-target="desafioBode" aria-label="Aumentar">+</button>
+                        </div>
                     </div>
                 </div>
                 <div class="valor-total">
                     <p>Valor Total: <strong id="valorTotalDisplay">R$ 0,00</strong></p>
                 </div>
                 <p class="aviso-tentativas">
-                    <strong>Importante:</strong> Cada inscrição dá direito a uma tentativa/passada por prova selecionada acima. No dia do evento, caso deseje realizar novas tentativas, o atirador poderá adquirir no máximo até 3 tentativas/passadas adicionais por prova, ao custo de R$ 30,00 cada.
+                    <strong>Importante:</strong> Cada modalidade permite no máximo 3 passadas/tentativas, ao custo de R$ 30,00 cada.
                 </p>
             </div>
-            
+
             <p>Realize o pagamento utilizando as opções PIX abaixo e envie o comprovante para o contato (44)99100-2961.</p>
             
             <div class="pix-main-container">
@@ -129,12 +155,12 @@
                 </div>                   </div>
                 </div>
             </div>
-            <p class="aviso-pagamento"><strong>ATENÇÃO: FAZER O PAGAMENTO VIA PIX ATÉ SEXTA-FEIRA 26/09/2025!</strong></p>
+            <p class="aviso-pagamento"><strong>ATENÇÃO: FAZER O PAGAMENTO VIA PIX ATÉ QUINTA-FEIRA 16/07/2026!</strong></p>
         </section>
     </main>
 
     <footer>
-        <p>Realização: Clube de Tiro de Paiçandu</p>
+        <p>Realização: Bodes do Tiro Maringá em parceria com o Clube de Tiro Paiçandu</p>
     </footer>
 
     <script src="script.js"></script>

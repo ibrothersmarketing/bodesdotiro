@@ -71,25 +71,47 @@ document.addEventListener("DOMContentLoaded", function() {
     // Configura o botão para o PIX CELULAR
     setupCopyButton("copyPixButtonCelular", "pixKeyCelular", "Copiar Celular");
     
-    // Função para calcular o valor total das provas selecionadas
+    // Função para calcular o valor total das passadas selecionadas
     function calcularValorTotal() {
-        const checkboxes = document.querySelectorAll('input[name="prova"]:checked');
+        const quantidadeInputs = document.querySelectorAll('.qtd-input');
         let valorTotal = 0;
-        
-        checkboxes.forEach(checkbox => {
-            valorTotal += parseFloat(checkbox.getAttribute('data-valor'));
+
+        quantidadeInputs.forEach(input => {
+            const quantidade = parseInt(input.value, 10) || 0;
+            const valorUnitario = parseFloat(input.getAttribute('data-valor'));
+            valorTotal += quantidade * valorUnitario;
         });
-        
+
         // Atualiza o display do valor total
         document.getElementById('valorTotalDisplay').textContent = `R$ ${valorTotal.toFixed(2).replace('.', ',')}`;
     }
-    
-    // Adiciona evento de change para todos os checkboxes de provas
-    const checkboxesProvas = document.querySelectorAll('input[name="prova"]');
-    checkboxesProvas.forEach(checkbox => {
-        checkbox.addEventListener('change', calcularValorTotal);
+
+    // Configura os botões de + e - para cada modalidade (máximo 3 passadas)
+    const MAX_PASSADAS = 3;
+    const quantidadeInputs = document.querySelectorAll('.qtd-input');
+
+    quantidadeInputs.forEach(input => {
+        const prova = input.getAttribute('data-prova');
+        const botaoMenos = document.querySelector(`.qtd-menos[data-target="${prova}"]`);
+        const botaoMais = document.querySelector(`.qtd-mais[data-target="${prova}"]`);
+
+        botaoMais.addEventListener('click', function() {
+            const valorAtual = parseInt(input.value, 10) || 0;
+            if (valorAtual < MAX_PASSADAS) {
+                input.value = valorAtual + 1;
+                calcularValorTotal();
+            }
+        });
+
+        botaoMenos.addEventListener('click', function() {
+            const valorAtual = parseInt(input.value, 10) || 0;
+            if (valorAtual > 0) {
+                input.value = valorAtual - 1;
+                calcularValorTotal();
+            }
+        });
     });
-    
+
     // Inicializa o cálculo do valor total
     calcularValorTotal();
 });
